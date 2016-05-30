@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDEE65C41CFCD87C00AB5583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE65C31CFCD87C00AB5583 /* AppDelegate.swift */; };
+		EDEE65C61CFCD87C00AB5583 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE65C51CFCD87C00AB5583 /* ViewController.swift */; };
+		EDEE65C91CFCD87C00AB5583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEE65C71CFCD87C00AB5583 /* Main.storyboard */; };
+		EDEE65CB1CFCD87C00AB5583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEE65CA1CFCD87C00AB5583 /* Assets.xcassets */; };
+		EDEE65CE1CFCD87C00AB5583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEE65CC1CFCD87C00AB5583 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EDEE65C01CFCD87C00AB5583 /* GPS-MapKit-Swift-IB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GPS-MapKit-Swift-IB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDEE65C31CFCD87C00AB5583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDEE65C51CFCD87C00AB5583 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EDEE65C81CFCD87C00AB5583 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDEE65CA1CFCD87C00AB5583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDEE65CD1CFCD87C00AB5583 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDEE65CF1CFCD87C00AB5583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDEE65BD1CFCD87C00AB5583 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDEE65B71CFCD87C00AB5583 = {
+			isa = PBXGroup;
+			children = (
+				EDEE65C21CFCD87C00AB5583 /* GPS-MapKit-Swift-IB */,
+				EDEE65C11CFCD87C00AB5583 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDEE65C11CFCD87C00AB5583 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDEE65C01CFCD87C00AB5583 /* GPS-MapKit-Swift-IB.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDEE65C21CFCD87C00AB5583 /* GPS-MapKit-Swift-IB */ = {
+			isa = PBXGroup;
+			children = (
+				EDEE65C31CFCD87C00AB5583 /* AppDelegate.swift */,
+				EDEE65C51CFCD87C00AB5583 /* ViewController.swift */,
+				EDEE65C71CFCD87C00AB5583 /* Main.storyboard */,
+				EDEE65CA1CFCD87C00AB5583 /* Assets.xcassets */,
+				EDEE65CC1CFCD87C00AB5583 /* LaunchScreen.storyboard */,
+				EDEE65CF1CFCD87C00AB5583 /* Info.plist */,
+			);
+			path = "GPS-MapKit-Swift-IB";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDEE65BF1CFCD87C00AB5583 /* GPS-MapKit-Swift-IB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDEE65D21CFCD87C00AB5583 /* Build configuration list for PBXNativeTarget "GPS-MapKit-Swift-IB" */;
+			buildPhases = (
+				EDEE65BC1CFCD87C00AB5583 /* Sources */,
+				EDEE65BD1CFCD87C00AB5583 /* Frameworks */,
+				EDEE65BE1CFCD87C00AB5583 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GPS-MapKit-Swift-IB";
+			productName = "GPS-MapKit-Swift-IB";
+			productReference = EDEE65C01CFCD87C00AB5583 /* GPS-MapKit-Swift-IB.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDEE65B81CFCD87C00AB5583 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Alistair Cooper";
+				TargetAttributes = {
+					EDEE65BF1CFCD87C00AB5583 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = EDEE65BB1CFCD87C00AB5583 /* Build configuration list for PBXProject "GPS-MapKit-Swift-IB" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDEE65B71CFCD87C00AB5583;
+			productRefGroup = EDEE65C11CFCD87C00AB5583 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDEE65BF1CFCD87C00AB5583 /* GPS-MapKit-Swift-IB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDEE65BE1CFCD87C00AB5583 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDEE65CE1CFCD87C00AB5583 /* LaunchScreen.storyboard in Resources */,
+				EDEE65CB1CFCD87C00AB5583 /* Assets.xcassets in Resources */,
+				EDEE65C91CFCD87C00AB5583 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDEE65BC1CFCD87C00AB5583 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDEE65C61CFCD87C00AB5583 /* ViewController.swift in Sources */,
+				EDEE65C41CFCD87C00AB5583 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EDEE65C71CFCD87C00AB5583 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDEE65C81CFCD87C00AB5583 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDEE65CC1CFCD87C00AB5583 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDEE65CD1CFCD87C00AB5583 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDEE65D01CFCD87C00AB5583 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDEE65D11CFCD87C00AB5583 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDEE65D31CFCD87C00AB5583 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "GPS-MapKit-Swift-IB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alistaircooper.GPS-MapKit-Swift-IB";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EDEE65D41CFCD87C00AB5583 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "GPS-MapKit-Swift-IB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alistaircooper.GPS-MapKit-Swift-IB";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDEE65BB1CFCD87C00AB5583 /* Build configuration list for PBXProject "GPS-MapKit-Swift-IB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDEE65D01CFCD87C00AB5583 /* Debug */,
+				EDEE65D11CFCD87C00AB5583 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDEE65D21CFCD87C00AB5583 /* Build configuration list for PBXNativeTarget "GPS-MapKit-Swift-IB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDEE65D31CFCD87C00AB5583 /* Debug */,
+				EDEE65D41CFCD87C00AB5583 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDEE65B81CFCD87C00AB5583 /* Project object */;
+}
