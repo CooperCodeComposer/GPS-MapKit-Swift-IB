@@ -19,11 +19,6 @@ class TableViewController: UITableViewController {
         
         downloadRestaurants()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     func downloadRestaurants() {
@@ -69,7 +64,7 @@ class TableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+// MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return restaurantCatArray.count
@@ -97,7 +92,6 @@ class TableViewController: UITableViewController {
         }
 
         return filteredArray.count
-        
 
     }
 
@@ -155,7 +149,6 @@ class TableViewController: UITableViewController {
                 
                 // make a dictionary of just object at index path
                 let restDict: NSDictionary = filteredArray[indexPath.row] as NSDictionary
-                
                 
                 // assign selected restaurant lat and lon
                 controller.restLat = (restDict.objectForKey("yLoc")?.doubleValue)!

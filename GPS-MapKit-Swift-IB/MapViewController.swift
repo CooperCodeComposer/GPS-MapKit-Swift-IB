@@ -24,13 +24,6 @@ class MapViewController: UIViewController, MKMapViewDelegate  {
 
     }
     
-//    func setZoomScale(loc: CLLocationCoordinate2D) {
-//        
-//        let region = MKCoordinateRegionMakeWithDistance(loc, 15000, 15000)
-//        self.mapView.setRegion(region, animated: false)
-//    
-//    }
-    
     func centerMapOnLoc(location: CLLocation) {
         let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 12000, 12000)
         self.mapView.setRegion(region, animated: false)
@@ -49,6 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate  {
     }
     
 
+// MARK: Mapkit delegate methods
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         
         if let loc = userLocation.location {
@@ -56,8 +50,6 @@ class MapViewController: UIViewController, MKMapViewDelegate  {
             centerMapOnLoc(loc)
         }
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
