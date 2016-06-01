@@ -1,0 +1,51 @@
+ [
+  {
+  "price" : "$",
+  "yLoc" : "34.186438",
+  "category" : "Pizza",
+  "xLoc" : "-118.465329",
+  "name" : "Lidos"
+  },
+  {
+  "price" : "$$",
+  "yLoc" : "34.201536",
+  "category" : "Thai",
+  "xLoc" : "-118.468155",
+  "name" : "Kinnara"
+  },
+  {
+  "price" : "$$",
+  "yLoc" : "34.208744",
+  "category" : "Cafe",
+  "xLoc" : "-118.510641",
+  "name" : "Humble Bee Bakery"
+  },
+  {
+  "price" : "$",
+  "yLoc" : "34.1752513",
+  "category" : "Pizza",
+  "xLoc" : "-118.448375",
+  "name" : "Pizza Rev"
+  },
+  {
+  "price" : "$",
+  "yLoc" : "34.172339",
+  "category" : "Pizza",
+  "xLoc" : "-118.456431",
+  "name" : "Napoli's Pizza Kitchen"
+  },
+  {
+  "price" : "$$$",
+  "yLoc" : "34.172316",
+  "category" : "Cafe",
+  "xLoc" : "-118.456960",
+  "name" : "Creme Caramel"
+  },
+  {
+  "price" : "$$$",
+  "yLoc" : "34.151150",
+  "category" : "Pizza",
+  "xLoc" : "-118.451412",
+  "name" : "Midici Neapolitan Pizza"
+  }
+  ]

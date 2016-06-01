@@ -7,14 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EDAB6F211CFF55A7007A65D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAB6F201CFF55A7007A65D6 /* MapKit.framework */; };
+		EDAB6F231CFF55AE007A65D6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDAB6F221CFF55AE007A65D6 /* CoreLocation.framework */; };
+		EDAB6F251CFF5AA2007A65D6 /* sample-881-globe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAB6F241CFF5AA2007A65D6 /* sample-881-globe@2x.png */; };
+		EDAB6F271CFF5AB0007A65D6 /* sample-518-filter.png in Resources */ = {isa = PBXBuildFile; fileRef = EDAB6F261CFF5AB0007A65D6 /* sample-518-filter.png */; };
+		EDAB6F2C1CFF6550007A65D6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAB6F2B1CFF6550007A65D6 /* TableViewController.swift */; };
+		EDAB6F2E1CFF8332007A65D6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAB6F2D1CFF8332007A65D6 /* MapViewController.swift */; };
 		EDEE65C41CFCD87C00AB5583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE65C31CFCD87C00AB5583 /* AppDelegate.swift */; };
 		EDEE65C61CFCD87C00AB5583 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE65C51CFCD87C00AB5583 /* ViewController.swift */; };
 		EDEE65C91CFCD87C00AB5583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEE65C71CFCD87C00AB5583 /* Main.storyboard */; };
 		EDEE65CB1CFCD87C00AB5583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDEE65CA1CFCD87C00AB5583 /* Assets.xcassets */; };
 		EDEE65CE1CFCD87C00AB5583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDEE65CC1CFCD87C00AB5583 /* LaunchScreen.storyboard */; };
+		EDEE65D61CFCE01700AB5583 /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = EDEE65D51CFCE01700AB5583 /* restaurants.json */; };
+		EDEE66141CFF508700AB5583 /* JsonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEE66131CFF508700AB5583 /* JsonBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EDAB6F201CFF55A7007A65D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EDAB6F221CFF55AE007A65D6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EDAB6F241CFF5AA2007A65D6 /* sample-881-globe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample-881-globe@2x.png"; sourceTree = "<group>"; };
+		EDAB6F261CFF5AB0007A65D6 /* sample-518-filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sample-518-filter.png"; sourceTree = "<group>"; };
+		EDAB6F2B1CFF6550007A65D6 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		EDAB6F2D1CFF8332007A65D6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EDEE65C01CFCD87C00AB5583 /* GPS-MapKit-Swift-IB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GPS-MapKit-Swift-IB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDEE65C31CFCD87C00AB5583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDEE65C51CFCD87C00AB5583 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +36,8 @@
 		EDEE65CA1CFCD87C00AB5583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDEE65CD1CFCD87C00AB5583 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDEE65CF1CFCD87C00AB5583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDEE65D51CFCE01700AB5583 /* restaurants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
+		EDEE66131CFF508700AB5583 /* JsonBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,15 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDAB6F231CFF55AE007A65D6 /* CoreLocation.framework in Frameworks */,
+				EDAB6F211CFF55A7007A65D6 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EDAB6F281CFF5AB6007A65D6 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EDAB6F241CFF5AA2007A65D6 /* sample-881-globe@2x.png */,
+				EDAB6F261CFF5AB0007A65D6 /* sample-518-filter.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		EDEE65B71CFCD87C00AB5583 = {
 			isa = PBXGroup;
 			children = (
+				EDAB6F221CFF55AE007A65D6 /* CoreLocation.framework */,
+				EDAB6F201CFF55A7007A65D6 /* MapKit.framework */,
 				EDEE65C21CFCD87C00AB5583 /* GPS-MapKit-Swift-IB */,
 				EDEE65C11CFCD87C00AB5583 /* Products */,
 			);
@@ -56,10 +85,15 @@
 			children = (
 				EDEE65C31CFCD87C00AB5583 /* AppDelegate.swift */,
 				EDEE65C51CFCD87C00AB5583 /* ViewController.swift */,
+				EDAB6F2B1CFF6550007A65D6 /* TableViewController.swift */,
+				EDAB6F2D1CFF8332007A65D6 /* MapViewController.swift */,
+				EDEE66131CFF508700AB5583 /* JsonBuilder.swift */,
 				EDEE65C71CFCD87C00AB5583 /* Main.storyboard */,
 				EDEE65CA1CFCD87C00AB5583 /* Assets.xcassets */,
 				EDEE65CC1CFCD87C00AB5583 /* LaunchScreen.storyboard */,
 				EDEE65CF1CFCD87C00AB5583 /* Info.plist */,
+				EDEE65D51CFCE01700AB5583 /* restaurants.json */,
+				EDAB6F281CFF5AB6007A65D6 /* images */,
 			);
 			path = "GPS-MapKit-Swift-IB";
 			sourceTree = "<group>";
@@ -124,6 +158,9 @@
 			files = (
 				EDEE65CE1CFCD87C00AB5583 /* LaunchScreen.storyboard in Resources */,
 				EDEE65CB1CFCD87C00AB5583 /* Assets.xcassets in Resources */,
+				EDAB6F251CFF5AA2007A65D6 /* sample-881-globe@2x.png in Resources */,
+				EDEE65D61CFCE01700AB5583 /* restaurants.json in Resources */,
+				EDAB6F271CFF5AB0007A65D6 /* sample-518-filter.png in Resources */,
 				EDEE65C91CFCD87C00AB5583 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +174,9 @@
 			files = (
 				EDEE65C61CFCD87C00AB5583 /* ViewController.swift in Sources */,
 				EDEE65C41CFCD87C00AB5583 /* AppDelegate.swift in Sources */,
+				EDEE66141CFF508700AB5583 /* JsonBuilder.swift in Sources */,
+				EDAB6F2E1CFF8332007A65D6 /* MapViewController.swift in Sources */,
+				EDAB6F2C1CFF6550007A65D6 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +326,7 @@
 				EDEE65D41CFCD87C00AB5583 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
