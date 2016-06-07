@@ -49,14 +49,11 @@ class TableViewController: UITableViewController {
     }
     
     func showError() {
-        
         dispatch_async(dispatch_get_main_queue()) { [unowned self] in
             let ac = UIAlertController(title: "Loading Error", message: "Could not download restaurant data.", preferredStyle: .Alert)
             ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(ac, animated: true, completion: nil)
-            
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,7 +85,7 @@ class TableViewController: UITableViewController {
             
         } else {
             print("Error: restaurant data could not be downloaded")
-            filteredArray = [["empty": "empty"]]
+            filteredArray = [["": ""]]
         }
 
         return filteredArray.count
@@ -113,7 +110,7 @@ class TableViewController: UITableViewController {
             
         } else {
             print("Error: restaurant data could not be downloaded")
-            filteredArray = [["empty": "empty"]]
+            filteredArray = [["": ""]]
         }
         
         // make a dictionary of just object at index path
@@ -144,7 +141,7 @@ class TableViewController: UITableViewController {
                     
                 } else {
                     print("Error: restaurant data could not be downloaded")
-                    filteredArray = [["empty": "empty"]]
+                    filteredArray = [["": ""]]
                 }
                 
                 // make a dictionary of just object at index path
