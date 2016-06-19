@@ -1,7 +1,7 @@
 # GPS-MapKit-Swift-IB
 App demo for parsing JSON from AWS w/ CoreLocation w/ MapKit
 
-- Swift 2.2
+- Swift 2.3
 
 ##Features:
 + class to build a basic array of dictionaries and convert to JSON. Example uses GPS data for restaurants 
