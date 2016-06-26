@@ -13,7 +13,7 @@ App demo for parsing JSON from AWS w/ CoreLocation w/ MapKit
 # Author
 Alistair Cooper
 
-[twitter](https://www.twitter.com/swiftcomposer.com)
+[twitter @SwiftComposer](https://www.twitter.com/swiftcomposer.com)
 
 [SwiftCodeComposer.com](https://www.swiftcodecomposer.com)
 
