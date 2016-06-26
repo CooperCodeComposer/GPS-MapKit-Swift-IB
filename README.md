@@ -10,6 +10,8 @@ App demo for parsing JSON from AWS w/ CoreLocation w/ MapKit
 + displays selected restaurant on a MKMapView
 + uses CoreLocation to find and display users current location and compass heading 
 
+![Alt text](/MapKitSS.png?raw=true "")
+
 # Author
 Alistair Cooper
 
