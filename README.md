@@ -1,5 +1,5 @@
 # GPS-MapKit-Swift-IB
-App demo for parsing JSON from AWS w/ CoreLocation w/ MapKit
+App demo using CoreLocation + MapKit + parsing JSON from AWS 
 
 - Swift 2.2
 - Xcode 7.3
