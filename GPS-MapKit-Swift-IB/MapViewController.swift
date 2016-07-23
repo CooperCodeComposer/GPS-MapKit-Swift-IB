@@ -21,14 +21,20 @@ class MapViewController: UIViewController, MKMapViewDelegate  {
         super.viewDidLoad()
         
         makePinForRestaurant()
-
     }
     
+    override func viewWillAppear(animated: Bool) {
+        // sets zoom scale using selected restaurant coordinates
+        setZoomScale()
+    }
+    
+    /* uncomment if you'd like app to center on current location
     func centerMapOnLoc(location: CLLocation) {
         let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 12000, 12000)
         self.mapView.setRegion(region, animated: false)
 
     }
+    */
     
     func makePinForRestaurant() {
         
@@ -41,29 +47,21 @@ class MapViewController: UIViewController, MKMapViewDelegate  {
         
     }
     
-
-// MARK: Mapkit delegate methods
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-        
-        if let loc = userLocation.location {
-            
-            centerMapOnLoc(loc)
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setZoomScale() {
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let location = CLLocationCoordinate2D(latitude: restLat, longitude: restLon)
+        let region = MKCoordinateRegion(center: location, span: span)
+        mapView.setRegion(region, animated: true)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+// MARK: Mapkit delegate methods
+    /* uncomment if you'd like app to center on current location
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+        
+        if let loc = userLocation.location {
+            centerMapOnLoc(loc)
+        }
     }
     */
 

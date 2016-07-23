@@ -13,6 +13,11 @@ class TableViewController: UITableViewController {
     
     let restaurantCatArray = ["Cafe", "Pizza", "Thai"]  // array of restaurant categories
     var restaurantArray: [[String:String]]?
+    
+    // struct to store strings used in storyboard
+    private struct Storyboard {
+        static let cellIdentifier = "RestaurantCell"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +60,6 @@ class TableViewController: UITableViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -90,33 +90,29 @@ class TableViewController: UITableViewController {
         return filteredArray.count
 
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.cellIdentifier, forIndexPath: indexPath)
         
         // gets category title from array using section as index
         let sectionCatTitle = restaurantCatArray[indexPath.section]
         
-        // use category name to make array of matching restaurants
-        var filteredArray: [[String:String]]
-        
         if let downloadedArray = restaurantArray {
-            filteredArray = downloadedArray.filter({
+            // use category name to make array of matching restaurants
+            let filteredArray = downloadedArray.filter({
                 
                 $0["category"] == sectionCatTitle //access the value to filter
             })
             
+            // make a dictionary of just object at index path
+            let restDict: NSDictionary = filteredArray[indexPath.row] as NSDictionary
+            
+            cell.textLabel?.text = restDict.objectForKey("name") as? String
+            cell.detailTextLabel?.text = restDict.objectForKey("price") as? String
+            
         } else {
             print("Error: restaurant data could not be downloaded")
-            filteredArray = [["": ""]]
         }
-        
-        // make a dictionary of just object at index path
-        let restDict: NSDictionary = filteredArray[indexPath.row] as NSDictionary
-        
-        cell.textLabel?.text = restDict.objectForKey("name") as? String
-        cell.detailTextLabel?.text = restDict.objectForKey("price") as? String
         
         return cell
     }
@@ -129,27 +125,29 @@ class TableViewController: UITableViewController {
                 // gets category title from array using section as index
                 let sectionCatTitle = restaurantCatArray[indexPath.section]
                 
-                // use category name to make array of matching restaurants
-                var filteredArray: [[String:String]]
+                
                 
                 if let downloadedArray = restaurantArray {
+                    // use category name to make array of matching restaurants
+                    var filteredArray: [[String:String]]
+                    
                     filteredArray = downloadedArray.filter({
                         
                         $0["category"] == sectionCatTitle //access the value to filter
                     })
                     
+                    // make a dictionary of just object at index path
+                    let restDict: NSDictionary = filteredArray[indexPath.row] as NSDictionary
+                    
+                    // assign selected restaurant lat and lon
+                    controller.restLat = (restDict.objectForKey("yLoc")?.doubleValue)!
+                    controller.restLon = (restDict.objectForKey("xLoc")?.doubleValue)!
+                    controller.restTitle = restDict.objectForKey("name") as? String
+                    
                 } else {
                     print("Error: restaurant data could not be downloaded")
-                    filteredArray = [["": ""]]
                 }
                 
-                // make a dictionary of just object at index path
-                let restDict: NSDictionary = filteredArray[indexPath.row] as NSDictionary
-                
-                // assign selected restaurant lat and lon
-                controller.restLat = (restDict.objectForKey("yLoc")?.doubleValue)!
-                controller.restLon = (restDict.objectForKey("xLoc")?.doubleValue)!
-                controller.restTitle = restDict.objectForKey("name") as? String
             }
         }
     }
