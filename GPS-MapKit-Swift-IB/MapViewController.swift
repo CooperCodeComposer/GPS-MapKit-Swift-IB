@@ -23,7 +23,7 @@ class MapViewController: UIViewController, MKMapViewDelegate  {
         makePinForRestaurant()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         // sets zoom scale using selected restaurant coordinates
         setZoomScale()
     }

@@ -12,10 +12,12 @@ import CoreLocation
 class TableViewController: UITableViewController {
     
     let restaurantCatArray = ["Cafe", "Pizza", "Thai"]  // array of restaurant categories
-    var restaurantArray: [[String:String]]?
+    var restaurantArray = [[String:String]]()
+    
+    let jsonURL = "https://s3-us-west-2.amazonaws.com/uclaiosclass/restaurants.json"
     
     // struct to store strings used in storyboard
-    private struct Storyboard {
+    fileprivate struct Storyboard {
         static let cellIdentifier = "RestaurantCell"
     }
 
@@ -28,126 +30,119 @@ class TableViewController: UITableViewController {
     func downloadRestaurants() {
         
         // start network pinwheel
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) { [unowned self] in
-            if let url = NSURL(string: "https://s3-us-west-2.amazonaws.com/uclaiosclass/restaurants.json") {
-                if let timesJsonData = try? NSData(contentsOfURL: url, options: []) {
-                    do {
-                        self.restaurantArray = try NSJSONSerialization.JSONObjectWithData(timesJsonData, options: .AllowFragments) as? [[String : String]]
-                        dispatch_async(dispatch_get_main_queue()) { [unowned self] in
-                            self.tableView.reloadData()
-                            // stop network pinwheel
-                            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        }
-                    } catch {
-                        self.showError()
+        guard let url = URL(string: jsonURL) else {
+            print("Error with json url")
+            return
+        }
+        
+        URLSession.shared.dataTask(with:url, completionHandler: { (data, response, error) in
+            
+            guard let data = data, error == nil else {
+                print(error as! NSError)
+                return
+            }
+            
+            do {
+                if let array = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String : String]] {
+                    
+                    self.restaurantArray = array
+                    
+                    DispatchQueue.main.sync() {
+                        self.tableView.reloadData()
+                        
+                        // stop network pinwheel
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        
                     }
-                } else {
-                    self.showError()
+                    
                 }
-            } else {
+                
+            } catch let error as NSError {
+                print(error)
                 self.showError()
             }
-        }
+            
+        }).resume()
+        
     }
     
     func showError() {
-        dispatch_async(dispatch_get_main_queue()) { [unowned self] in
-            let ac = UIAlertController(title: "Loading Error", message: "Could not download restaurant data.", preferredStyle: .Alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(ac, animated: true, completion: nil)
-        }
+        
+        let ac = UIAlertController(title: "Loading Error", message: "Could not download restaurant data.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(ac, animated: true, completion: nil)
+        
     }
 
 // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return restaurantCatArray.count
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return restaurantCatArray[section]
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let sectionCatTitle = restaurantCatArray[section]
         
-        var filteredArray: [[String:String]]
-        
-        if let downloadedArray = restaurantArray {
-            filteredArray = downloadedArray.filter({
-                
-                $0["category"] == sectionCatTitle //access the value to filter
-            })
+        let filteredArray = restaurantArray.filter({
             
-        } else {
-            print("Error: restaurant data could not be downloaded")
-            filteredArray = [["": ""]]
-        }
+            $0["category"] == sectionCatTitle //access the value to filter
+        })
 
         return filteredArray.count
 
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.cellIdentifier, forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.cellIdentifier, for: indexPath)
         
         // gets category title from array using section as index
         let sectionCatTitle = restaurantCatArray[indexPath.section]
         
-        if let downloadedArray = restaurantArray {
-            // use category name to make array of matching restaurants
-            let filteredArray = downloadedArray.filter({
-                
-                $0["category"] == sectionCatTitle //access the value to filter
-            })
+        let filteredArray = restaurantArray.filter({
             
-            // make a dictionary of just object at index path
-            let restDict: NSDictionary = filteredArray[indexPath.row] as NSDictionary
-            
-            cell.textLabel?.text = restDict.objectForKey("name") as? String
-            cell.detailTextLabel?.text = restDict.objectForKey("price") as? String
-            
-        } else {
-            print("Error: restaurant data could not be downloaded")
-        }
+            $0["category"] == sectionCatTitle //access the value to filter
+        })
+        
+        // make a dictionary of just object at index path
+        let restDict: Dictionary = filteredArray[indexPath.row]
+        
+        cell.textLabel?.text = restDict["name"]
+        cell.detailTextLabel?.text = restDict["price"]
         
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowMapSegue" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let controller = segue.destinationViewController as! MapViewController
+                let controller = segue.destination as! MapViewController
                 
                 // gets category title from array using section as index
                 let sectionCatTitle = restaurantCatArray[indexPath.section]
                 
+                let filteredArray = restaurantArray.filter({
+                    
+                    $0["category"] == sectionCatTitle //access the value to filter
+                })
                 
+                // make a dictionary of just object at index path
+                let restDict: Dictionary = filteredArray[indexPath.row]
                 
-                if let downloadedArray = restaurantArray {
-                    // use category name to make array of matching restaurants
-                    var filteredArray: [[String:String]]
-                    
-                    filteredArray = downloadedArray.filter({
-                        
-                        $0["category"] == sectionCatTitle //access the value to filter
-                    })
-                    
-                    // make a dictionary of just object at index path
-                    let restDict: NSDictionary = filteredArray[indexPath.row] as NSDictionary
-                    
-                    // assign selected restaurant lat and lon
-                    controller.restLat = (restDict.objectForKey("yLoc")?.doubleValue)!
-                    controller.restLon = (restDict.objectForKey("xLoc")?.doubleValue)!
-                    controller.restTitle = restDict.objectForKey("name") as? String
-                    
-                } else {
-                    print("Error: restaurant data could not be downloaded")
-                }
+                // assign selected restaurant lat and lon
                 
+                guard let latString = restDict["yLoc"], let longString = restDict["xLoc"] else { return }
+                
+                controller.restLat = Double(latString)!
+                controller.restLon = Double(longString)!
+                controller.restTitle = restDict["name"]
+
             }
         }
     }

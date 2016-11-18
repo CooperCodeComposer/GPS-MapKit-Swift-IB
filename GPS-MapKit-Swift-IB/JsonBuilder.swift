@@ -10,9 +10,9 @@ import Foundation
 
 struct JsonBuilder {
     
-    static func makeRestaurantArray() -> [AnyObject] {
+    static func makeRestaurantArray() -> [[String : String]] {
         
-        var restaurantArray: [AnyObject] = []
+        var restaurantArray: [[String : String]] = []
         
         let restaurant1: [String: String] = ["name": "Lidos", "category": "Pizza", "yLoc": "34.186438", "xLoc": "-118.465329", "price": "$"]
         
@@ -47,16 +47,16 @@ struct JsonBuilder {
     }
     
     
-    static func JSONStringify(jsonObject jsonObject: AnyObject, prettyPrinted:Bool = false) -> String {
+    static func JSONStringify(jsonObject: AnyObject, prettyPrinted:Bool = false) -> String? {
         
-        let options = prettyPrinted ? NSJSONWritingOptions.PrettyPrinted : NSJSONWritingOptions(rawValue: 0)
+        let options = prettyPrinted ? JSONSerialization.WritingOptions.prettyPrinted : JSONSerialization.WritingOptions(rawValue: 0)
         
         
-        if NSJSONSerialization.isValidJSONObject(jsonObject) {
+        if JSONSerialization.isValidJSONObject(jsonObject) {
             
             do{
-                let data = try NSJSONSerialization.dataWithJSONObject(jsonObject, options: options)
-                if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
+                let data = try JSONSerialization.data(withJSONObject: jsonObject, options: options)
+                if let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
                     return string as String
                 }
             } catch {
@@ -67,7 +67,7 @@ struct JsonBuilder {
             
         }
         
-        return ""
+        return nil
         
     }
     

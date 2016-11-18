@@ -28,7 +28,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         print(jsonString)
         */
         
-        // setup corelocation
+        // setup core location
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
@@ -39,9 +39,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        let current: CLLocation = locations.last!
+        guard let current: CLLocation = locations.last else { return }
         
         let lat = current.coordinate.latitude
         let lon = current.coordinate.longitude
@@ -50,14 +50,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         longitudeLabel.text = String(format: "Longitude: %.6f", lon)
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         
         headingLabel.text = String(format: "Heading: %.1f", newHeading.magneticHeading)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
